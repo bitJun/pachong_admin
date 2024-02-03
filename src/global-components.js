@@ -1,0 +1,6 @@
+export { default as SvgIcon } from '@/components/SvgIcon/index.vue'
+export { default as ProTable } from '@/components/ProTable/index.vue'
+export { default as ProList } from '@/components/ProList/index.vue'
+export { default as ProSearch } from '@/components/ProSearch/index.vue'
+export { default as ProPagination } from '@/components/ProPagination/index.vue'
+export { default as ElSelectTree } from '@/components/SelectTree/index.vue'
