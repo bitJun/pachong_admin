@@ -16,6 +16,7 @@ export default {
   },
   mutations: {
     setToken(state, data) {
+      console.log('data', data)
       state.authorization = data
       // 保存到localStorage
       setItem(TOKEN, data)

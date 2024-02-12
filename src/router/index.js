@@ -3,34 +3,15 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import redirect from './modules/redirect'
 import error from './modules/error'
 import login from './modules/login'
-import lock from './modules/lock'
+// import test from './modules/test'
 import home from './modules/home'
-import test from './modules/test'
-import basic from './modules/basic'
-import customer from './modules/customer'
-import customerFollowUp from './modules/customerFollowUp'
-import doctor from './modules/doctor'
-import expense from './modules/expense'
-import triage from './modules/triage'
-import marketing from './modules/marketing'
-import schedule from './modules/schedule'
-import system from './modules/system'
 
 /* 菜单栏的路由 */
 // 固定菜单
 export const fixedRoutes = [...home]
 // 动态菜单
 export const asyncRoutes = [
-  ...customer,
-  ...customerFollowUp,
-  ...triage,
-  ...doctor,
-  ...schedule,
-  ...expense,
-  ...marketing,
-  ...basic,
-  ...system,
-  ...test,
+  // ...test,
 ]
 
 const router = createRouter({
@@ -38,11 +19,10 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      redirect: '/home',
+      redirect: '/dashboard',
     },
     ...redirect, // 统一的重定向配置
     ...login,
-    ...lock,
     ...fixedRoutes,
     ...error,
   ],

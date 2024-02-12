@@ -102,6 +102,7 @@ const submit = () => {
         message: '登录成功',
         duration: 1000,
       })
+      console.log('res', res);
       store.dispatch('app/setToken', res.token)
       const targetPath = decodeURIComponent(route.query.redirect)
       if (targetPath.startsWith('http')) {

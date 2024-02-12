@@ -11,9 +11,10 @@ const getPageTitle = title => {
   return appTitle
 }
 const WhiteList = ['login', 'lock']
+// const WhiteList = ['*']
 router.beforeEach(async to => {
   document.title = getPageTitle(!!to.meta && to.meta.title)
-
+  console.log('TOKEN', TOKEN)
   if (WhiteList.includes(to.name)) {
     return true
   }
@@ -28,6 +29,7 @@ router.beforeEach(async to => {
   } else {
     // 获取用户角色信息，根据角色判断权限
     let userinfo = store.state.account.userinfo
+    console.log('userinfo', userinfo)
     if (!userinfo) {
       const loadingInstance = ElLoading.service({
         lock: true,
