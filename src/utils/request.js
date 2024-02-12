@@ -29,7 +29,6 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   // 响应成功进入第1个函数，该函数的参数是响应对象
   response => {
-    console.log('response', response);
     if (response.data.code == 200) {
       return Promise.resolve(response.data.data)
     } else {

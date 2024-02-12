@@ -14,7 +14,6 @@ const WhiteList = ['login', 'lock']
 // const WhiteList = ['*']
 router.beforeEach(async to => {
   document.title = getPageTitle(!!to.meta && to.meta.title)
-  console.log('TOKEN', TOKEN)
   if (WhiteList.includes(to.name)) {
     return true
   }
@@ -29,7 +28,6 @@ router.beforeEach(async to => {
   } else {
     // 获取用户角色信息，根据角色判断权限
     let userinfo = store.state.account.userinfo
-    console.log('userinfo', userinfo)
     if (!userinfo) {
       const loadingInstance = ElLoading.service({
         lock: true,
@@ -53,7 +51,7 @@ router.beforeEach(async to => {
     if (store.state.menu.menus.length <= 0) {
       const loadingInstance = ElLoading.service({
         lock: true,
-        text: '正在加载数据，请稍候~',
+        text: '正在加载路由数据，请稍候~',
         background: 'rgba(0, 0, 0, 0.7)',
       })
       try {

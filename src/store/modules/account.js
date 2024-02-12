@@ -19,11 +19,9 @@ export default {
   actions: {
     // 获取用户信息
     async getUserinfo({ commit }) {
-      const { code, data } = await GetUserinfo()
-      if (+code === 200) {
-        commit('setUserinfo', data)
-        return Promise.resolve(data)
-      }
+      const res = await GetUserinfo()
+      commit('setUserinfo', res)
+      return Promise.resolve(res)
     },
   },
 }

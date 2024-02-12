@@ -2,6 +2,18 @@ const Layout = () => import('@/layout/index.vue')
 const Dashboard = () => import('@/views/home/index.vue')
 const Statistics = () => import('@/views/statistics/index.vue')
 const User = () => import('@/views/user/index.vue')
+const Auction = () => import('@/views/goods/auction/index.vue')
+const Consignment = () => import('@/views/goods/consignment/index.vue')
+const OrderList = () => import('@/views/order/list.vue')
+const OrderAppraise = () => import('@/views/order/appraise.vue')
+const AftersaleList = () => import('@/views/aftersale/index.vue')
+const LotteryList = () => import('@/views/lottery/index.vue')
+const ResourceBanner = () => import('@/views/resource/banner.vue')
+const ResourceGoods = () => import('@/views/resource/goods.vue')
+const Category = () => import('@/views/category/index.vue')
+const AuthManage = () => import('@/views/auth/index.vue')
+const AuthRole = () => import('@/views/auth/role.vue')
+const Report = () => import('@/views/report/index.vue')
 
 export default [
   {
@@ -35,8 +47,8 @@ export default [
 		},
     icon: 'el-icon-location',
 		children: [{
-			name: 'statisticspage',
-			path: '/statisticspage',
+			name: 'statistics',
+			path: '/statistics',
 			component: Statistics,
 			meta: {
 				title: '数据统计',
@@ -54,7 +66,7 @@ export default [
     icon: 'el-icon-location',
 		children: [{
 			name: 'userpage',
-			path: '/userpage',
+			path: '/user/list',
       component: User,
 			meta: {
 				icon: 'el-icon-menu',
@@ -62,206 +74,194 @@ export default [
 			}
 		}]
 	},
-	// {
-	// 	name: 'goods',
-	// 	path: '/goods',
-	// 	meta: {
-	// 		icon: 'el-icon-eleme-filled',
-	// 		title: '商品管理',
-	// 		role: ['SA']
-	// 	},
-	// 	children: [
-	// 		{
-	// 			name: 'goodsAuction',
-	// 			path: '/goodsAuction',
-	// 			component: 'goods/auction/index',
-	// 			meta: {
-	// 				icon: 'el-icon-menu',
-	// 				title: '拍卖管理',
-	// 				role: ['SA']
-	// 			}
-	// 		},
-	// 		{
-	// 			name: 'goodsConsignment',
-	// 			path: '/goodsConsignment',
-	// 			component: 'goods/consignment/index',
-	// 			meta: {
-	// 				icon: 'el-icon-menu',
-	// 				title: '挂售管理',
-	// 				role: ['SA']
-	// 			}
-	// 		}
-	// 	]
-	// },
-	// {
-	// 	name: 'order',
-	// 	path: '/order',
-	// 	meta: {
-	// 		icon: 'el-icon-eleme-filled',
-	// 		title: '订单管理',
-	// 		role: ['SA']
-	// 	},
-	// 	children: [
-	// 		{
-	// 			name: 'orderPage',
-	// 			path: '/orderPage',
-	// 			component: 'order/list',
-	// 			meta: {
-	// 				icon: 'el-icon-menu',
-	// 				title: '订单列表',
-	// 				role: ['SA']
-	// 			}
-	// 		},
-	// 		{
-	// 			name: 'orderAppraise',
-	// 			path: '/orderAppraise',
-	// 			component: 'order/appraise',
-	// 			meta: {
-	// 				icon: 'el-icon-menu',
-	// 				title: '评价管理',
-	// 				role: ['SA']
-	// 			}
-	// 		}
-	// 	]
-	// },
-	// {
-	// 	name: 'aftersale',
-	// 	path: '/aftersale',
-	// 	meta: {
-	// 		icon: 'el-icon-eleme-filled',
-	// 		title: '售后管理',
-	// 		role: ['SA']
-	// 	},
-	// 	children: [
-	// 		{
-	// 			name: 'aftersalepage',
-	// 			path: '/aftersalepage',
-	// 			component: 'aftersale/index',
-	// 			meta: {
-	// 				icon: 'el-icon-menu',
-	// 				title: '售后列表',
-	// 				role: ['SA']
-	// 			}
-	// 		}
-	// 	]
-	// },
-	// {
-	// 	name: 'lottery',
-	// 	path: '/lottery',
-	// 	meta: {
-	// 		icon: 'el-icon-eleme-filled',
-	// 		title: '抽奖管理',
-	// 		role: ['SA']
-	// 	},
-	// 	children: [{
-	// 		name: 'lotterypage',
-	// 		path: '/lotterypage',
-	// 		component: 'lottery/index',
-	// 		meta: {
-	// 			icon: 'el-icon-menu',
-	// 			title: '抽奖管理',
-	// 			role: ['SA']
-	// 		}
-	// 	}]
-	// },
-	// {
-	// 	name: 'resource',
-	// 	path: '/resource',
-	// 	meta: {
-	// 		icon: 'el-icon-eleme-filled',
-	// 		title: '资源位管理',
-	// 		role: ['SA']
-	// 	},
-	// 	children: [
-	// 		{
-	// 			name: 'resourceBanner',
-	// 			path: '/resourceBanner',
-	// 			component: 'resource/banner',
-	// 			meta: {
-	// 				icon: 'el-icon-menu',
-	// 				title: 'banner管理',
-	// 				role: ['SA']
-	// 			}
-	// 		},
-	// 		{
-	// 			name: 'resourceGoods',
-	// 			path: '/resourceGoods',
-	// 			component: 'resource/goods',
-	// 			meta: {
-	// 				icon: 'el-icon-menu',
-	// 				title: '热门商品管理',
-	// 				role: ['SA']
-	// 			}
-	// 		}
-	// 	]
-	// },
-	// {
-	// 	name: 'category',
-	// 	path: '/category',
-	// 	meta: {
-	// 		icon: 'el-icon-eleme-filled',
-	// 		title: '分类管理',
-	// 		role: ['SA']
-	// 	},
-	// 	children: [{
-	// 		name: 'categorypage',
-	// 		path: '/categorypage',
-	// 		component: 'category/index',
-	// 		meta: {
-	// 			icon: 'el-icon-menu',
-	// 			title: '分类管理',
-	// 			role: ['SA']
-	// 		}
-	// 	}]
-	// },
-	// {
-	// 	name: 'auth',
-	// 	path: '/auth',
-	// 	meta: {
-	// 		icon: 'el-icon-eleme-filled',
-	// 		title: '权限管理',
-	// 		role: ['SA']
-	// 	},
-	// 	children: [
-	// 		{
-	// 			name: 'authPage',
-	// 			path: '/authPage',
-	// 			component: 'auth/index',
-	// 			meta: {
-	// 				icon: 'el-icon-menu',
-	// 				title: '账号管理',
-	// 				role: ['SA']
-	// 			}
-	// 		},
-	// 		{
-	// 			name: 'authRole',
-	// 			path: '/authRole',
-	// 			component: 'auth/role',
-	// 			meta: {
-	// 				icon: 'el-icon-menu',
-	// 				title: '角色管理',
-	// 				role: ['SA']
-	// 			}
-	// 		}
-	// 	]
-	// },
-	// {
-	// 	name: 'report',
-	// 	path: '/report',
-	// 	meta: {
-	// 		icon: 'el-icon-eleme-filled',
-	// 		title: '举报管理',
-	// 		role: ['SA']
-	// 	},
-	// 	children: [{
-	// 		name: 'reportpage',
-	// 		path: '/reportpage',
-	// 		component: 'report/index',
-	// 		meta: {
-	// 			icon: 'el-icon-menu',
-	// 			title: '举报管理',
-	// 			role: ['SA']
-	// 		}
-	// 	}]
-	// }
+	{
+		name: 'goods',
+		path: '/goods',
+		component: Layout,
+		meta: {
+			icon: 'el-icon-eleme-filled',
+			title: '商品管理',
+		},
+		children: [
+			{
+				name: 'goodsAuction',
+				path: '/goods/Auction',
+				component: Auction,
+				meta: {
+					icon: 'el-icon-menu',
+					title: '拍卖管理',
+				}
+			},
+			{
+				name: 'goodsConsignment',
+				path: '/goods/Consignment',
+				component: Consignment,
+				meta: {
+					icon: 'el-icon-menu',
+					title: '挂售管理',
+				}
+			}
+		]
+	},
+	{
+		name: 'order',
+		path: '/order',
+		component: Layout,
+		meta: {
+			icon: 'el-icon-eleme-filled',
+			title: '订单管理',
+		},
+		children: [
+			{
+				name: 'orderPage',
+				path: '/order/list',
+				component: OrderList,
+				meta: {
+					icon: 'el-icon-menu',
+					title: '订单列表',
+				}
+			},
+			{
+				name: 'orderAppraise',
+				path: '/orderAppraise',
+				component: OrderAppraise,
+				meta: {
+					icon: 'el-icon-menu',
+					title: '评价管理',
+				}
+			}
+		]
+	},
+	{
+		name: 'aftersale',
+		path: '/aftersale',
+		component: Layout,
+		meta: {
+			icon: 'el-icon-eleme-filled',
+			title: '售后管理',
+		},
+		children: [
+			{
+				name: 'aftersalepage',
+				path: '/aftersale/list',
+				component: AftersaleList,
+				meta: {
+					icon: 'el-icon-menu',
+					title: '售后列表',
+				}
+			}
+		]
+	},
+	{
+		name: 'lottery',
+		path: '/lottery',
+		component: Layout,
+		meta: {
+			icon: 'el-icon-eleme-filled',
+			title: '抽奖管理',
+		},
+		children: [{
+			name: 'lotterypage',
+			path: '/lotterypage',
+			component: LotteryList,
+			meta: {
+				icon: 'el-icon-menu',
+				title: '抽奖管理',
+			}
+		}]
+	},
+	{
+		name: 'resource',
+		path: '/resource',
+		component: Layout,
+		meta: {
+			icon: 'el-icon-eleme-filled',
+			title: '资源位管理',
+		},
+		children: [
+			{
+				name: 'resourceBanner',
+				path: '/resource/banner',
+				component: ResourceBanner,
+				meta: {
+					icon: 'el-icon-menu',
+					title: 'banner管理',
+				}
+			},
+			{
+				name: 'resourceGoods',
+				path: '/resource/goods',
+				component: ResourceGoods,
+				meta: {
+					icon: 'el-icon-menu',
+					title: '热门商品管理',
+				}
+			}
+		]
+	},
+	{
+		name: 'category',
+		path: '/category',
+		component: Layout,
+		meta: {
+			icon: 'el-icon-eleme-filled',
+			title: '分类管理',
+		},
+		children: [{
+			name: 'categorypage',
+			path: '/category/index',
+			component: Category,
+			meta: {
+				icon: 'el-icon-menu',
+				title: '分类管理',
+			}
+		}]
+	},
+	{
+		name: 'auth',
+		path: '/auth',
+		component: Layout,
+		meta: {
+			icon: 'el-icon-eleme-filled',
+			title: '权限管理',
+		},
+		children: [
+			{
+				name: 'authPage',
+				path: '/auth/manage',
+				component: AuthManage,
+				meta: {
+					icon: 'el-icon-menu',
+					title: '账号管理',
+				}
+			},
+			{
+				name: 'authRole',
+				path: '/auth/role',
+				component: AuthRole,
+				meta: {
+					icon: 'el-icon-menu',
+					title: '角色管理',
+				}
+			}
+		]
+	},
+	{
+		name: 'report',
+		path: '/report',
+		component: Layout,
+		meta: {
+			icon: 'el-icon-eleme-filled',
+			title: '举报管理',
+		},
+		children: [{
+			name: 'reportpage',
+			path: '/report/list',
+			component: Report,
+			meta: {
+				icon: 'el-icon-menu',
+				title: '举报管理',
+			}
+		}]
+	}
 ]
