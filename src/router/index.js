@@ -3,7 +3,6 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import redirect from './modules/redirect'
 import error from './modules/error'
 import login from './modules/login'
-// import test from './modules/test'
 import home from './modules/home'
 
 /* 菜单栏的路由 */
